@@ -67,10 +67,12 @@ def main():
     input_list = [int(i) for i in input().split()]
     print("Input array is " + str(input_list))
 
-    output, iterations = split_and_add(input_list)
-
-    print("Final array " + str(output))
-    print("Number of Iterations = " + str(iterations))
+    if input_list:
+        output, iterations = split_and_add(input_list)
+        print("Final array " + str(output))
+        print("Number of Iterations = " + str(iterations))
+    else:
+        raise ValueError('List was empty')
 
 
 if __name__ == "__main__":
