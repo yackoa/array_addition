@@ -16,7 +16,7 @@ class TestArrayAddition(unittest.TestCase):
         self.assertEqual(self.first_half, a)
         self.assertEqual(self.second_half, b)
 
-
-
-
-
+    def test_split_and_add(self):                           
+        result, number_of_passes = array_addition.split_and_add(self.big_list)
+        self.assertEqual(self.answer, result)               
+        self.assertEqual(self.iterations, number_of_passes) 
