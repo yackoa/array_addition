@@ -8,7 +8,7 @@ class TestArrayAddition(unittest.TestCase):
         self.big_list = [1, 2, 3, 4, 5, 6, 7]
         self.first_half = [1, 2, 3]
         self.second_half = [4, 5, 6, 7]
-        self.answer = [28]
+        self.answer = 28
         self.iterations = 3
 
     def test_split_list(self):

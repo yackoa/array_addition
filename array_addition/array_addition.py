@@ -30,19 +30,19 @@ def split_and_add(input_list):
     input_list : list
         This is the input list
 
-    Returns : ([single_sum] , iterations)
-        Returns lists representing the sum and number of iterations required to achieve it
+    Returns : (single_sum , iterations)
+        Returns number representing the sum of intermediate lists and number of iterations required to achieve it
 
 
     Example:
         >>> split_and_add([1,2,3,4,5,6,7])
-        ([28], 3)
+        (28, 3)
     """
-    output = input_list.copy()
+    output_list = input_list.copy()
     iteration = 0
 
-    while len(output) != 1:
-        first_half, second_half = split_list(output)
+    while len(output_list) != 1:
+        first_half, second_half = split_list(output_list)
 
         len_h1 = len(first_half)
         len_h2= len(second_half)
@@ -56,8 +56,10 @@ def split_and_add(input_list):
         elif len_h2 > len_h1:
             first_half = [0] * diff + first_half
 
-        output = list(map(add, first_half, second_half))
+        output_list = list(map(add, first_half, second_half))
         iteration += 1
+
+    output = int(output_list)
 
     return output, iteration
 
